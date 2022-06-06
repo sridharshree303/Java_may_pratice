@@ -1,0 +1,369 @@
+// Cryptography
+
+//Implementing the Caesar Cipher
+//Brief history of Cryptography
+
+// For Example
+ 
+ 	Online Shopping : Security
+ 	
+ 	--> A Little about computer security
+ 	--> you want to something online
+ 	   		-> Sends credit card information to online store
+ 	--> Don not want credit card info stolen
+ 			-> What makes it safe ?
+ 	--> Computer encrypts data before sending
+ 			-> encrypts data in letters and symbols in code format
+ 	--> Thief can only see encrypted data
+ 			-> Its very hard to decipher
+ 	--> Receiving server decrypts data
+ 	
+ // Types of Cryptography
+ 
+ 	// Modern Cryptography    : secure ; advanced math
+ 	// Classical Cryptography : insecure ; simple math
+ 	
+ // Modern Cryptography : https
+ 
+ 	// htpps -- The connection is encrypted and authenticated using AES_128_GCM and 
+ 				uses ECDHE_RSA as the key exchange mechanism
+ 			-> https = secure
+ 			-> Uses modern cryptography : RSA + AES
+ 			-> Math for those : a bit more than we'd like
+ 
+ // Introduction
+ // Caesar Cipher Overview
+ 			
+		FIRST LEGION ATTACK EAST FLANK
+		
+		CFOPQ IBDFLK XQQXZH BXPQ CIXKH
+
+		-> Named for Julius Caesar
+		-> Encryption: substitute letter with (letter+N)
+				-> Caeser: N = 23 (i.e. 3 letters prior)
+				
+					ABCDE-FGHIJ-KLMNO-PQRST-UVWXY-Z
+					ZYXWV-UTSRQ-PONML-KJIHG-FEDCB-A
+					
+				-> Here every letter position is replaced by N-3 format
+						F - 3 = C
+// A FEW NEW CONCEPTS
+
+		--> New String Manipulations
+		--> For loops which count from over a range
+				-> Use number to index into data
+
+// Concatenation
+
+		--> Fancy word for "stick together"
+		--> use + operator with a String operand
+					ABC + DEF = ABCDEF
+
+// Useful for Caesar Cipher
+
+		--> Make a "rearranged" alphabet
+			  -> Take two pieces (substring)
+			  -> Concatenate them together
+			  	
+				  /*
+				    String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+					String encr = alphabet.substring(23);
+					System.out.println(encr);  // XYZ
+				  */
+				  
+				  /*
+				    String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+					String encr = alphabet.substring(23);
+					String con = encr + alphabet.substring(0,23);
+					System.out.println(con); //XYZABCDEFGHIJKLMNOPQRSTUVW 
+				  */
+
+// Strings are Immutable
+		
+		--> Cannot change them
+		--> Can only make new ones
+		
+		String s = " Hello ";
+		String x = s;  // Hello
+		
+// String methods
+		
+		append     --  Put String, int, char, etc,.. on end
+		insert     --  Insert String, int, char, etc,. into middle
+		charAt     --  Gets character at specified index
+		setCharAt  --  Changes the character at specified index
+		toString   --  Get back String that you made
+
+
+	    StringBuilder sb = new StringBuilder("Hello");
+	    
+		sb.append("World"); // Hello World
+
+		sb.insert(5," Around The " ); // Hello Around The World
+	
+		sb.charAt(9); //u
+		
+		sb.setCharAt(2,'Z'); // HeZlo Around The World
+		
+		sb.toString(); //HeZlo Around The World
+		
+
+// Reverse a String
+
+	/*
+	public static String reverse (String s) {
+		String ret = " ";
+		for (int k = 0; k < s.length(); k += 1) {
+			ret = s.charAt(k) + ret ;
+		}
+		return ret;
+	}
+	*/
+
+// Character Building
+
+	Methods :
+	
+	isLowerCase(ch) = return boolean if ch is 'a','b',...
+	isDigit(ch)  = returns boolean if ch is '0','1',...,'9'
+	toLowerCase(ch) = returns lowercase version of ch
+	toUpperCase(ch) = returns uppercase version of ch
+	
+// Write down procedure of cryptography
+
+ 		--> Looked at 0th letter of message('I')
+ 		--> Looked for 'I' in alphabet
+ 		--> Found letter in same position in shifted alphabet('Z')
+ 		--> Replaced the 0th character of the message with 'Z'
+
+
+//------------------------------------------------------------------------------------------
+
+//Breaking the Caesar Cipher - Introduction
+
+// Breaking Casear
+
+		--> You have implemented a Caesar cipher
+				-> Basic form of encryption, concepts useful
+				-> We use a key to encrypt, how to decrypt ?
+		--> Intended recipient will know the key
+				-> Encrypt with 7, Decrypt 19
+		--> What about "cracking" ?
+				-> Thief or hacker "finds" key
+				-> Can we use brute force ?
+				
+//What if a Human Helps
+
+		--> Suppose we intercept this message
+		--> What does this message say?
+				-> If we knew key to encrypt, we could decrypt
+				-> How many possible keys are there ? Try all!
+		--> Outline of this approach
+				-> Have code to encrpt, call it with every key
+				-> Brute force: encryption fast, key space small
+
+// Human or Eyeball Decryption
+
+		--> Unlock or decrypt an encrypted message
+				-> When we don't have the key
+				-> But we do have code for CasearCipher
+				
+				public void eyeballDecrypt(String encrypted) {
+					CaesarCipher cipher = new CaesarCipher();
+					for(int k=0; k<26; k++) {
+						String s = cipher.encrypt(encrypted,k);
+						System.out.println(k+"\t"+s);
+					}
+				}
+		
+		--> Encrypted the message into all possible 25 replaces.
+			Then read the correct message find out.
+
+
+//--------------------------------------------------------------------------------
+
+//Breaking the Caesar Cipher - Arrays
+
+		--> Arrays : homogeneous collection
+		--> Very important programming concept
+
+		/*
+		public static void dnaFingerprint(String s) {
+			int cc = 0, cg = 0, ca = 0,ct = 0;
+			
+			for (int k = 0; k<s.length();k++) {
+				char ch = s.charAt(k);
+				if (ch == 'c') {
+					cc += 1;
+				}
+				else if ( ch == 'g') {
+					cg += 1;
+				}
+				else if(ch == 'a') {
+					ca += 1;
+				}
+				else if ( ch == 't') {
+					ct += 1;
+				}
+				else {
+					
+				}
+			}
+			System.out.println(cc);
+			System.out.println(cg);
+			System.out.println(ca);
+			System.out.println(ct);
+		}
+		*/
+
+// Concepts for Arrays
+
+	  /* 
+	     String s = "......";
+	     for(int k = 0; k < s.length(); k++){
+	     	char ch = s.charAt(k);
+	     }
+	  */
+	  
+	  /*
+	     int[] a = new int[256];
+	     for(int k = 0; k < a.length; k++){
+	     	int val = a[k];
+	     }
+	  */
+	  
+	  --> Instead of using s.charAt(k) use a[k]
+	  --> Instead of using s.length() use a.length
+	  
+// Arrays : counting characters in a String
+ 	
+ 	/*
+ 	public static void textFingerPrint(String s) {
+		String alpha = "abcdefghijklmnopqrstuvwxyz";
+		int[] counters = new int[26];
+		for ( int k=0; k<s.length(); k++) {
+			char ch = s.charAt(k);
+			int index = alpha.indexOf(Character.toLowerCase(ch));
+			if(index != -1) {
+				counters[index] += 1;
+			}
+		}
+		for(int k=0; k<counters.length;k++) {
+			System.out.println(alpha.charAt(k)+"\t"+counters[k]);
+		}
+	}
+	*/
+	
+//--------------------------------------------------------------------------------------------
+
+// Indexing Array Elements
+	
+	--> Sometimes build methods to solve problems
+		
+		public int indexOf(String[] list, String word) {
+			for(int k=0; k < list.length; k++){
+ 				if (list[k].equals(word)) {
+ 					return k;
+ 				}
+			}
+			return -1;
+		}
+		
+//Summary
+
+//Cracking codes
+		--> You used arrays to crack a Caesar cipher
+		 		-> Counting frequencies, using indexing
+		 		-> Both encrypt and decrypt used indexing
+		--> Internet encryption is more secure
+		
+//==============================================================================================
+				---------> Object oriented Programming  <-----------
+
+// Java is Object Oriented Language
+
+	--> Encapsulate code and data
+			Object =  code  +  data
+					(methods) + (fields)
+ 		
+//String
+          --> sequence of characters 
+          --> String s = duke_programming
+          		s.length()
+          		s.indexOf("program")
+          		s.indexOf("g")
+          		s.indexOf("f")
+          		s.indexOf("q",8)      
+          		s.startsWith("duke")  //duke
+          		s.endsWith("king")
+          		s.substring(4,7)
+          		s.toUpperCase()
+          		
+// Class = Type , Object = Instance
+         
+    --> Objects are Instances of Class
+    
+// rewriting with Encapsulation
+
+		/*
+		public class CaesarCipher {
+			
+			private String alphabet;
+			private String shiftedAlphabet;
+			
+			public CaesarCipher(int key){
+				alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+				shiftedAlphabet = alphabet.substring(key) +
+		 						   alphabet.substring(0,key);
+			}
+			
+		 	public String encrypt(String input){
+		 		StringBuilder sb = new StringBuilder(input);
+		 		for(int i = 0; i < sb.length();i++){
+		 			char c = sb.charAt(i);
+		 			int idx = alphabet.indexOf(c);
+		 			if(idx != -1){
+		 				c = shiftedAlphabet.charAt(idx);
+		 				sb.setCharAt(i,c);
+		 			}
+		 		}
+		 		return sb.toString();
+		 	}
+		 }
+		 */
+		 
+//  Old Way : No Encapsulation
+
+		--> Old Way:
+				-> CaesarCipher held no data
+				-> Passed in message + key
+						.encrypt(message,key)
+		 
+//  New Way : Encapsulation Key
+
+		--> New Way:
+				-> CaesarCipher Encapsulates key
+				-> Pass in message only
+						.encrypt(message)
+
+// Fields and Visibility
+	
+		public  = Interface
+		private = Implementation
+
+// Constructors
+
+		--> Called by creating creating objects
+		--> public and default
+		--> Class name and constructor name should be same
+		--> Cryptography set to constructor
+
+
+
+
+
+
+
+
+
+	

@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+C:\Users\kosridha\Desktop\Learning path\Java_may_pratice\.metadata\.plugins\org.eclipse.jdt.core
+262672239.index
+1669818263.index
+1865797976.index
