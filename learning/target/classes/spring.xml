@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	<bean id="vehicle" class="com.practice.learning.Car"></bean>
+	
+	 <!-- property injection / setter injection 
+	<bean id="employee" class="com.practice.learning.Employee">
+		<property name="id">
+			<value>101</value>
+		</property>
+		<property name="name">
+			<value>Sridhar</value>
+		</property>
+		<property name="salary">
+			<value>18000</value>
+		</property>
+	</bean> -->
+	
+	 <!-- constructor injection 
+	<bean id="employee2" class="com.practice.learning.Employee">
+		<constructor-arg value="102" type="int"></constructor-arg>
+		<constructor-arg value="Teja" type="java.lang.String"></constructor-arg>
+		<constructor-arg value="19000" type="double"></constructor-arg>
+	</bean> --> 
+	
+	 <!-- Collection injection  and Scope of bean -->
+	<!-- <bean id="department" class="com.practice.learning.Department" autowire="byName" scope="prototype">
+		<property name="id" value="10"></property>
+		<property name="name">
+			<value>HR</value>
+		</property>
+		<property name="functions">
+			<list>
+				<value>HRM</value>
+				<value>Payroll</value>
+				<value>CSR</value>
+				<value>MGNT</value>
+			</list>
+		</property>
+	</bean> -->
+	
+	<!-- Inner beans
+	<bean id="employee3" class="com.practice.learning.Employee" >
+		<property name="id"><value>107</value></property>
+		<property name="name"><value>priya</value></property>
+		<property name="salary"><value>20000</value></property>
+		<property name="dept">
+			<bean id="department" class="com.practice.learning.Department">
+				<property name="id" value="200"></property>
+				<property name="name" value="marketing"></property>
+				<property name="functions">
+					<list>
+						<value>sales</value>
+						<value>promotions</value>
+						<value>cg</value>
+						<value>mg</value>
+					</list>
+				</property>
+			</bean>
+		</property>
+	</bean> -->
+	
+	<!-- Autowiring -->
+	<!-- <bean id='employee4' class="com.practice.learning.Employee" autowire="byName">
+		<property name="id"><value>177</value></property>
+		<property name="name"><value>Tejasri</value></property>
+		<property name="salary"><value>21000</value></property>
+	</bean> -->
+	
+	<!-- Inheritance in beans -->
+	<!-- <bean id="parentbean" class="com.practice.learning.Employee">
+		<property name="field1" value="value1"></property>
+	</bean>
+	
+	<bean id="childBean" parent="parentBean">
+		<property name="filed2" value="value2"></property>
+		<property name="filedN" value="valueN"></property>
+	</bean> -->
+	
+</beans>
