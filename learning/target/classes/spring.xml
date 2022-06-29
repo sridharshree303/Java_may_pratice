@@ -59,7 +59,7 @@
 						<value>promotions</value>
 						<value>cg</value>
 						<value>mg</value>
-					</list>
+					</list>		
 				</property>
 			</bean>
 		</property>

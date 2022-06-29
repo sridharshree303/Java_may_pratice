@@ -1,25 +1,25 @@
-package com.practice.learning;
-
-public class Employ {
-	static int i = 0;
-    public static void main(String[] args) { 
-		for(int a= 1;a<=26;a++) {
-			for(int b= 1;b<=26;b++) {
-				for(int c= 1;c<=26;c++) {
-					for(int d= 1;d<=26;d++) {
-						for(int e= 1;e<=26;e++) {
-//							System.out.println(a+" , "+b+" , "+c+" , "+d+" , "+e+ " ---- "+ i++);
-							for(int f= 1;f<=26;f++) {
-								System.out.println(a+" , "+b+" , "+c+" , "+d+" , "+e+" , "+f + " ---- "+ i++);
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
+//package com.practice.learning;
+//
+//public class Employ {
+//	static int i = 0;
+//    public static void main(String[] args) { 
+//		for(int a= 1;a<=26;a++) {
+//			for(int b= 1;b<=26;b++) {
+//				for(int c= 1;c<=26;c++) {
+//					for(int d= 1;d<=26;d++) {
+//						for(int e= 1;e<=26;e++) {
+////							System.out.println(a+" , "+b+" , "+c+" , "+d+" , "+e+ " ---- "+ i++);
+//							for(int f= 1;f<=26;f++) {
+//								System.out.println(a+" , "+b+" , "+c+" , "+d+" , "+e+" , "+f + " ---- "+ i++);
+//							}
+//						}
+//					}
+//				}
+//			}
+//		}
+//	}
+//}
+//
 
 
 

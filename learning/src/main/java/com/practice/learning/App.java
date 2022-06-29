@@ -16,9 +16,8 @@ public class App
     	AnnotationConfigApplicationContext cxt = new AnnotationConfigApplicationContext(App.class);
     	Employee emp = cxt.getBean(Employee.class);
 //    	emp.work();    // callback
-    	emp.getDepartment().work();
+    	emp.getDepartment().work();  
     	cxt.close();   // close object
-    	
     	
 // -------------> XML based configuration  <---------------------------------------------    	
 
