@@ -11,8 +11,8 @@ public interface IUserRepository extends JpaRepository<UserData, Integer> {
 	
 	public abstract UserData findByUsername(String username);
 	public abstract UserData findByEmail(String email);
-	public abstract UserData findByMobileNumber(String mobileNumber);
-	
+	public abstract UserData findByMobileNumber(Long mobileNumber);
+	public abstract UserData findByUserid(Integer userid);
 
 //	public User findByUser_email(String user_email,String user_mobile,String user_name);
 //	public String findByUser_email(String user_email);

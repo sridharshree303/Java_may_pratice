@@ -33,6 +33,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\kosridha\Desktop\Learning path\Java_may_pratice\learning"/>
 			<item value="C:\Users\kosridha\Desktop\Learning path\Java_may_pratice"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -57,12 +58,15 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="com.plurasight.conference"/>
 			<item value="com.practice.learning"/>
 		</list>
 		<list key="groupId">
+			<item value="com.plurasight"/>
 			<item value="com.practice"/>
 		</list>
 		<list key="artifactId">
+			<item value="conference"/>
 			<item value="learning"/>
 		</list>
 		<list key="projectNameTemplate">
