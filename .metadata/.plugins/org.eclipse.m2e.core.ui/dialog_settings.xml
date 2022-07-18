@@ -2,6 +2,13 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\kosridha\Desktop\Learning path\Others\mobileproducts"/>
+			<item value="C:\Users\kosridha\Desktop\Learning path\Java_may_pratice\mobileproducts"/>
+			<item value="C:\Users\kosridha\Desktop\Learning path\Java_may_pratice\StudentManagement"/>
+			<item value="C:\Users\kosridha\Desktop\Learning path\Java_may_pratice\StudentData"/>
+			<item value="C:\Users\kosridha\Desktop\Learning path\Java_may_pratice\demo-sso-spring"/>
+			<item value="C:\Users\kosridha\Desktop\Learning path\Java_may_pratice\demosso"/>
+			<item value="C:\Users\kosridha\Java\authappnackend"/>
 			<item value="C:\Users\kosridha\Maven\Usermanagement\UserManagement_"/>
 			<item value="C:\Users\kosridha\Desktop\Learning path\Java_may_pratice\UserManagement_"/>
 			<item value="C:\Users\kosridha\Desktop\Learning path\Java_may_pratice\project"/>
@@ -103,7 +110,7 @@
 	<section name="org.eclipse.m2e.core.ui.internal.dialogs.MavenRepositorySearchDialog">
 		<item key="width" value="480"/>
 		<item key="height" value="667"/>
-		<item key="x" value="720"/>
-		<item key="y" value="71"/>
+		<item key="x" value="984"/>
+		<item key="y" value="114"/>
 	</section>
 </section>
