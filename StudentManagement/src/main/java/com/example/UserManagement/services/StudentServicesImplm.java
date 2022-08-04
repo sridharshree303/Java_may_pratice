@@ -25,17 +25,13 @@ public class StudentServicesImplm implements StudentServices {
 	
 	@Override
 	public List<Student> getAllStudents() {
-
 		return studentRepository.findAll();
 	}
 
-
 	@Override
 	public Student saveStudent(Student student) {
-
 		return studentRepository.save(student);
 	}
-
 
 	@Override
 	public Student getStudentById(Long studentId) throws DataNotFoundException {
@@ -47,7 +43,6 @@ public class StudentServicesImplm implements StudentServices {
 		} else {
 			LOG.info("Student is NOT available.");
 			throw new DataNotFoundException(studentId + " this student is not exist.");
-
 		}
 	}
 
@@ -62,15 +57,7 @@ public class StudentServicesImplm implements StudentServices {
 		} else {
 			throw new DataNotFoundException(studentId + " this student does not exist.");
 		}
-
 	}
-
-//	@Override
-//	public void deleteStudentById(Long studentId) {
-//		
-//		studentRepository.deleteById(studentId);
-//		
-//	}
 
 	@Override
 	public Student updateStudentDetailsById(Long studentId, Student student) throws DataNotFoundException {
@@ -81,52 +68,5 @@ public class StudentServicesImplm implements StudentServices {
 		throw new DataNotFoundException("Student with eid " + student.getId() + " does not exist.");
 
 	}
-
-//		if(Objects.nonNull(student.getName()) &&
-//				!"".equalsIgnoreCase(student.getName())) {
-//			studentDb.setName(student.getName());
-//		}
-//		
-//		if(Objects.nonNull(student.getAddress()) && 
-//				!"".equalsIgnoreCase(student.getAddress())) {
-//			studentDb.setName(student.getAddress());
-//		}
-//		
-//		if(Objects.nonNull(student.getSubject()) &&
-//				!"".equalsIgnoreCase(student.getSubject())) {
-//			studentDb.setName(student.getSubject());
-//		}
-//				
-//	return studentRepository.save(studentDb);
-
-//	@Override
-//	public String addUser(Student student) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public Student readUser(int id) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public String updateUser(Student student) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public List<Student> allUsers() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public String deleteUser() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
 
 }
