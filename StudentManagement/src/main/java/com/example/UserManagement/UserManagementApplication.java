@@ -10,5 +10,7 @@ public class UserManagementApplication {
 		System.out.println("Start..");
 		SpringApplication.run(UserManagementApplication.class, args);
 		System.out.println("End.."); 
+		
+	
 	}
 }
