@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\kosridha\Desktop\Learningpath\Spring\pravin"/>
 			<item value="C:\Users\kosridha\Desktop\Learning path\Java_may_pratice\StudentManagement"/>
 			<item value="C:\Users\kosridha\Desktop\Learning path\Java_may_pratice\junittest"/>
 			<item value="C:\Users\kosridha\Desktop\Learning path\Tempo\junittestcases"/>
@@ -16,7 +17,6 @@
 			<item value="C:\Users\kosridha\Java\authappnackend"/>
 			<item value="C:\Users\kosridha\Maven\Usermanagement\UserManagement_"/>
 			<item value="C:\Users\kosridha\Desktop\Learning path\Java_may_pratice\UserManagement_"/>
-			<item value="C:\Users\kosridha\Desktop\Learning path\Java_may_pratice\project"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
